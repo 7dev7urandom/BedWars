@@ -388,7 +388,7 @@ public class Game implements org.screamingsandals.bedwars.api.game.Game {
     }
 
     public boolean isBlockAddedDuringGame(Location loc) {
-        return status == GameStatus.RUNNING && region.isBlockAddedDuringGame(loc);
+        return (status == GameStatus.RUNNING || status == GameStatus.GAME_END_CELEBRATING) && region.isBlockAddedDuringGame(loc);
     }
 
     public boolean blockPlace(GamePlayer player, Block block, BlockState replaced, ItemStack itemInHand) {
